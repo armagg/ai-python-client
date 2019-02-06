@@ -282,9 +282,9 @@ class World:
                 targeted_list.append(target)
             cast_list.append(CastAbility(cast_ability["casterId"], targeted_list,
                                          self.map.get_cell(cast_ability["startCell"]["row"],
-                                         cast_ability["startCell"]["column"]),
+                                                           cast_ability["startCell"]["column"]),
                                          self.map.get_cell(cast_ability["endCell"]["row"],
-                                         cast_ability["endCell"]["column"]),
+                                                           cast_ability["endCell"]["column"]),
                                          cast_ability["abilityName"]))
         if my_or_opp == "my":
             self.my_cast_abilities = cast_list
@@ -307,7 +307,7 @@ class World:
                 hero.abilities = []
                 for cooldown in cooldowns:
                     hero.abilities += [Ability(self.get_ability_constants(cooldown["name"]), cooldown["remCooldown"])]
-            #todo is None
+            # todo is None
             if "currentCell" not in new_hero:
                 hero.current_cell = Cell(row=-1, column=-1, is_wall=False, is_in_my_respawn_zone=False,
                                          is_in_opp_respawn_zone=False, is_in_objective_zone=False, is_in_vision=False)
@@ -743,9 +743,6 @@ class World:
         self.queue.put(Event('pick', [hero_name.value]))
 
 
-#     void castAbility(int id, Ability ability, Cell targetCell);
-#     void moveHero(int id, Direction[] move_directions);
-#     void pickHero(HeroName heroName)
 class Event:
     EVENT = "event"
 
