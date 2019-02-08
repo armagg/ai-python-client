@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a059118d-1b22-4a88-885e-e59f6c938987" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/ai-python-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ai-python-client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="565">
-              <caret line="438" column="43" selection-start-line="438" selection-start-column="43" selection-end-line="438" selection-end-column="43" />
+            <state relative-caret-position="-255">
+              <caret line="415" column="49" lean-forward="true" selection-start-line="415" selection-start-column="49" selection-end-line="415" selection-end-column="49" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -30,7 +33,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Network.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
+            <state relative-caret-position="660">
               <caret line="30" column="114" selection-start-line="30" selection-start-column="114" selection-end-line="30" selection-end-column="114" />
             </state>
           </provider>
@@ -39,7 +42,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
+            <state relative-caret-position="1496">
               <caret line="70" column="25" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
             </state>
           </provider>
@@ -48,7 +51,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="22">
               <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
             </state>
           </provider>
@@ -65,6 +68,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>movePhase</find>
+      <find>copy.copy</find>
+      <find>Ability</find>
+      <find>rem_cooldown</find>
       <find>get_hero</find>
       <find>get_ability_constants</find>
       <find>slope_eq</find>
@@ -77,6 +84,7 @@
       <find>abilities</find>
       <find>get_ability</find>
       <find>current_cell</find>
+      <find>constants</find>
       <find>respawn_time</find>
       <find>class</find>
       <find>LOG</find>
@@ -90,11 +98,6 @@
       <find>impact_ce</find>
       <find>ability_constant</find>
       <find>Hero</find>
-      <find>Ability</find>
-      <find>ability_constants</find>
-      <find>constant</find>
-      <find>.game_constants</find>
-      <find>constants</find>
     </findStrings>
     <replaceStrings>
       <replace>dead_heroes</replace>
@@ -113,15 +116,16 @@
         <option value="$PROJECT_DIR$/test_for_thread.py" />
         <option value="$PROJECT_DIR$/AI.py" />
         <option value="$PROJECT_DIR$/Controller.py" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/Model.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="65" />
-    <option name="y" value="-4" />
-    <option name="width" value="1301" />
-    <option name="height" value="772" />
+    <option name="x" value="296" />
+    <option name="y" value="53" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -205,8 +209,7 @@
       <updated>1548017209023</updated>
       <workItem from="1549313818320" duration="6180000" />
       <workItem from="1549322747375" duration="5389000" />
-      <workItem from="1549344457455" duration="5802000" />
-      <workItem from="1549362359610" duration="239000" />
+      <workItem from="1549344457455" duration="4307000" />
     </task>
     <task id="LOCAL-00001" summary="delete piercing&#10;add move_phase_num">
       <created>1549314560657</created>
@@ -264,18 +267,11 @@
       <option name="project" value="LOCAL" />
       <updated>1549351537030</updated>
     </task>
-    <task id="LOCAL-00009" summary="suicide">
-      <created>1549351768508</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1549351768508</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17610000" />
+    <option name="totallyTimeSpent" value="15876000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -287,12 +283,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="757" width="1303" height="780" extended-state="6" />
+    <frame x="73" y="27" width="1847" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20398407" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20322043" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Statistic" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3293348" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32868218" />
@@ -300,9 +297,9 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3293348" />
-      <window_info anchor="bottom" id="SonarLint" order="7" weight="0.3293348" />
+      <window_info active="true" anchor="bottom" id="SonarLint" order="7" visible="true" weight="0.3293348" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3293348" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.34573644" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3456925" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.032715376" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
@@ -325,8 +322,7 @@
     <MESSAGE value="ENUMS" />
     <MESSAGE value="Nyet-work" />
     <MESSAGE value="everything done except for these:&#10;‫‪AbilityTargets‬‬&#10;g‫‪etImpactCell‬‬&#10;‪getMyDeadHeroes&#10;‫‪getOppDeadHeroes‬‬&#10;‫‪getAP‬‬" />
-    <MESSAGE value="suicide" />
-    <option name="LAST_COMMIT_MESSAGE" value="suicide" />
+    <option name="LAST_COMMIT_MESSAGE" value="everything done except for these:&#10;‫‪AbilityTargets‬‬&#10;g‫‪etImpactCell‬‬&#10;‪getMyDeadHeroes&#10;‫‪getOppDeadHeroes‬‬&#10;‫‪getAP‬‬" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/map.map">
@@ -348,8 +344,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="438" column="43" selection-start-line="438" selection-start-column="43" selection-end-line="438" selection-end-column="43" />
+        <state relative-caret-position="-255">
+          <caret line="415" column="49" lean-forward="true" selection-start-line="415" selection-start-column="49" selection-end-line="415" selection-end-column="49" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -358,21 +354,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Network.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
+        <state relative-caret-position="660">
           <caret line="30" column="114" selection-start-line="30" selection-start-column="114" selection-end-line="30" selection-end-column="114" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
+        <state relative-caret-position="1496">
           <caret line="70" column="25" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="22">
           <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
         </state>
       </provider>

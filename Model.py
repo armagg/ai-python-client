@@ -129,6 +129,8 @@ class Hero:
         return None
 
     def __eq__(self, other):
+        if other is None:
+            return False
         if type(self) is type(other):
             return self.id == other.id
         return False
@@ -150,6 +152,8 @@ class Cell:
         self.column = column
 
     def __eq__(self, other):
+        if other is None:
+            return False
         if self.column == other.column and self.row == other.row:
             return True
         return False
@@ -401,19 +405,19 @@ class World:
         self.map = Map(cells, row_num, col_num, my_respawn_zone, opp_respawn_zone, objective_zone)
 
     def game_constant_init(self, game_constants_msg):
-        self.game_constants = GameConstants(max_ap=game_constants_msg["maxAP"],
-                                            preprocess_timeout=game_constants_msg["preprocessTimeout"],
-                                            first_move_timeout=game_constants_msg["firstMoveTimeout"],
-                                            normal_timeout=game_constants_msg["normalTimeout"],
-                                            max_turns=game_constants_msg["maxTurns"],
-                                            kill_score=game_constants_msg["killScore"],
-                                            objective_zone_score=game_constants_msg["objectiveZoneScore"],
-                                            max_score=game_constants_msg["maxScore"])
-        self.max_ap = self.game_constants.max_ap
-        self.max_turns = self.game_constants.max_turns
-        self.kill_score = self.game_constants.kill_score
-        self.objective_zone_score = self.game_constants.objective_zone_score
-        self.max_score = self.game_constants.max_score
+        game_constants = GameConstants(max_ap=game_constants_msg["maxAP"],
+                                       preprocess_timeout=game_constants_msg["preprocessTimeout"],
+                                       first_move_timeout=game_constants_msg["firstMoveTimeout"],
+                                       normal_timeout=game_constants_msg["normalTimeout"],
+                                       max_turns=game_constants_msg["maxTurns"],
+                                       kill_score=game_constants_msg["killScore"],
+                                       objective_zone_score=game_constants_msg["objectiveZoneScore"],
+                                       max_score=game_constants_msg["maxScore"])
+        self.max_ap = game_constants.max_ap
+        self.max_turns = game_constants.max_turns
+        self.kill_score = game_constants.kill_score
+        self.objective_zone_score = game_constants.objective_zone_score
+        self.max_score = game_constants.max_score
 
     def _get_hero(self, hero_type):
         for hero in self.heroes:
