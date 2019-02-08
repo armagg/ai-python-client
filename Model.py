@@ -64,8 +64,19 @@ class GameConstants:
 
 class Ability:
     def __init__(self, ability_constants, rem_cooldown):
-        self.ability_constants = ability_constants
+        self._ability_constants = ability_constants
+        self._update_constants()
         self.rem_cooldown = rem_cooldown
+
+    def _update_constants(self):
+        self.name = self._ability_constants.name
+        self.type = self._ability_constants.type
+        self.range = self._ability_constants.range
+        self.ap_cost = self._ability_constants.ap_cost
+        self.cooldown = self._ability_constants.cooldown
+        self.power = self._ability_constants.power
+        self.area_of_effect = self._ability_constants.area_of_effect
+        self.is_lobbing = self._ability_constants.is_lobbing
 
     def is_ready(self):
         return self.rem_cooldown <= 0
@@ -97,11 +108,11 @@ class Hero:
         self.offensive_abilities = []
         self.dodge_abilities = []
         for ability in self.abilities:
-            if ability.ability_constants.type == AbilityType.DEFENSIVE:
+            if ability.type == AbilityType.DEFENSIVE:
                 self.defensive_abilities += [ability]
-            if ability.ability_constants.type == AbilityType.OFFENSIVE:
+            if ability.type == AbilityType.OFFENSIVE:
                 self.offensive_abilities += [ability]
-            if ability.ability_constants.type == AbilityType.DODGE:
+            if ability.type == AbilityType.DODGE:
                 self.dodge_abilities += [ability]
 
     def set_constants(self, hero_constant):
@@ -113,7 +124,7 @@ class Hero:
 
     def get_ability(self, ability_name):
         for ability in self.abilities:
-            if ability.ability_constants.name == ability_name:
+            if ability.name == ability_name:
                 return ability
         return None
 
@@ -200,12 +211,12 @@ class World:
         self.my_cast_abilities = []
         self.opp_cast_abilities = []
         if world is not None:
-            self.game_constants = world.game_constants
-            self.max_ap = self.game_constants.max_ap
-            self.max_turns = self.game_constants.max_turns
-            self.kill_score = self.game_constants.kill_score
-            self.objective_zone_score = self.game_constants.objective_zone_score
-            self.max_score = self.game_constants.max_score
+            self.__game_constants = world._get_game_constants()
+            self.max_ap = self.__game_constants.max_ap
+            self.max_turns = self.__game_constants.max_turns
+            self.kill_score = self.__game_constants.kill_score
+            self.objective_zone_score = self.__game_constants.objective_zone_score
+            self.max_score = self.__game_constants.max_score
             self.hero_constants = world.hero_constants
             self.ability_constants = world.ability_constants
             self.map = world.map
@@ -213,6 +224,9 @@ class World:
             self.heroes = world.heroes
         else:
             self.queue = queue
+
+    def _get_game_constants(self):
+        return self.__game_constants
 
     def get_my_dead_heroes(self):
         dead_heroes = []
@@ -443,7 +457,7 @@ class World:
                     return None
                 ability_constant = self.get_ability_constants(ability_name)
             else:
-                ability_constant = ability.ability_constants
+                ability_constant = ability._ability_constants
         if start_cell is None:
             if start_row is None or start_column is None:
                 return None
@@ -665,7 +679,7 @@ class World:
                     return None
                 ability_constant = self.get_ability_constants(ability_name)
             else:
-                ability_constant = ability.ability_constants
+                ability_constant = ability._ability_constants
         if start_cell is None:
             if start_row is None or start_column is None:
                 return None
@@ -708,10 +722,10 @@ class World:
             self.queue.put(Event('cast', [hero_id, ability_name.value, row, column]))
             return
         if hero_id is not None and ability is not None and cell is not None:
-            self.queue.put(Event('cast', [hero_id, ability.ability_constants.name, cell.row, cell.column]))
+            self.queue.put(Event('cast', [hero_id, ability.name, cell.row, cell.column]))
             return
         if hero_id is not None and ability is not None and row is not None and column is not None:
-            self.queue.put(Event('cast', [hero_id, ability.ability_constants.name, row, column]))
+            self.queue.put(Event('cast', [hero_id, ability.name, row, column]))
             return
         if hero is not None and ability_name is not None and cell is not None:
             self.queue.put(Event('cast', [hero.id, ability_name.value, cell.row, cell.column]))
@@ -720,10 +734,10 @@ class World:
             self.queue.put(Event('cast', [hero.id, ability_name.value, row, column]))
             return
         if hero is not None and ability is not None and cell is not None:
-            self.queue.put(Event('cast', [hero.id, ability.ability_constants.name, cell.row, cell.column]))
+            self.queue.put(Event('cast', [hero.id, ability.name, cell.row, cell.column]))
             return
         if hero is not None and ability is not None and row is not None and column is not None:
-            self.queue.put(Event('cast', [hero.id, ability.ability_constants.name, row, column]))
+            self.queue.put(Event('cast', [hero.id, ability.name, row, column]))
             return
 
     def move_hero(self, hero_id=None, hero=None, direction=None):
